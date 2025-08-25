@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Inicio · {{ brand.name }}{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero__content">
+      <h1>{{ brand.slogan }}</h1>
+      <p class="lead">{{ brand.tagline }}</p>
+      <a class="btn" href="{{ url_for('about') }}">Conócenos</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Servicios</h2>
+    <ul class="cards">
+      {% for s in brand.services %}
+      <li class="card">{{ s }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="grid-3">
+      {% for h in highlights %}
+      <article class="feature">
+        <h3>{{ h.title }}</h3>
+        <p>{{ h.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

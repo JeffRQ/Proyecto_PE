@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}{{ brand.name }} · {{ brand.slogan }}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta name="description" content="Teiprometal · Soluciones metalmecánicas: corte, soldadura, estructuras, mantenimiento industrial.">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__bar">
+      <a class="logo" href="{{ url_for('index') }}">{{ brand.name }}</a>
+      <nav class="nav">
+        <a class="nav__link {% if request.path == '/' %}is-active{% endif %}" href="{{ url_for('index') }}">Inicio</a>
+        <a class="nav__link {% if request.path.startswith('/about') %}is-active{% endif %}" href="{{ url_for('about') }}">Acerca de</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <strong>{{ brand.name }}</strong><br>
+        {{ brand.tagline }}
+      </div>
+      <div>
+        <div>{{ brand.contact.city }}</div>
+        <div>{{ brand.contact.phone }}</div>
+        <div><a href="mailto:{{ brand.contact.email }}">{{ brand.contact.email }}</a></div>
+      </div>
+    </div>
+    <div class="footer__copy">© {{ current_year }} {{ brand.name }}. Todos los derechos reservados.</div>
+  </footer>
+</body>
+</html>

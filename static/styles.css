@@ -1,0 +1,57 @@
+/* Paleta Teiprometal: gris oscuro + acento ámbar */
+:root{
+  --bg: #0b0f19;
+  --ink: #1f2937;
+  --muted: #64748b;
+  --panel: #0f172a;
+  --surface: #111827;
+  --card: #f8fafc;
+  --accent: #f59e0b; /* ámbar */
+  --accent-ink: #111827;
+  --maxw: 1000px;
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--ink); background:#f3f4f6; }
+a{ color: inherit; }
+
+.container{ max-width: var(--maxw); margin: 0 auto; padding: 0 16px; }
+
+/* Header */
+.header{ background: var(--panel); color: #e5e7eb; }
+.header__bar{ display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+.logo{ font-weight: 800; letter-spacing:.5px; text-decoration:none; }
+.nav{ display:flex; gap:10px; }
+.nav__link{ text-decoration:none; padding:8px 12px; border-radius:10px; color:#cbd5e1; }
+.nav__link:hover, .nav__link.is-active{ background:#1f2937; color:white; }
+
+/* Hero */
+.hero{ background: linear-gradient(135deg, #111827, #0b0f19); color:#e5e7eb; border-radius: var(--radius); margin: 24px 0; }
+.hero__content{ padding: 36px 20px; }
+.lead{ color:#cbd5e1; margin-top:6px; }
+
+/* Buttons */
+.btn{ display:inline-block; background: var(--accent); color: var(--accent-ink); padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600; margin-top:14px; }
+.btn:hover{ filter: brightness(0.95); }
+
+/* Sections */
+.section{ background:white; border-radius: var(--radius); padding: 18px; margin: 18px 0; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+h1,h2,h3{ margin: 6px 0 10px; }
+
+/* Cards */
+.cards{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; list-style:none; padding:0; margin:0; }
+.card{ background: var(--card); border:1px solid #e5e7eb; padding:14px; border-radius:12px; }
+
+/* Features grid */
+.grid-3{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:14px; }
+.feature{ background:white; border:1px solid #e5e7eb; border-radius:12px; padding:14px; }
+
+/* Chips */
+.chips{ list-style:none; display:flex; flex-wrap:wrap; gap:8px; padding:0; }
+.chip{ background:#e5e7eb; border-radius:999px; padding:6px 12px; }
+
+/* Footer */
+.footer{ color:#e5e7eb; background: var(--surface); margin-top: 28px; }
+.footer__grid{ display:flex; justify-content:space-between; gap:16px; padding: 16px; flex-wrap:wrap; }
+.footer__copy{ text-align:center; padding: 10px 16px; background: #0b0f19; color:#9ca3af; font-size: 14px; }
